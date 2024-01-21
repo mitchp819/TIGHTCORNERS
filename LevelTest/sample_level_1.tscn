@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://rolcgjrq4jws"]
+
+[ext_resource type="PackedScene" uid="uid://cnn0seja4wa3i" path="res://CharactersAssembled/l_shaped_man.tscn" id="2_52241"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bno6h"]
+size = Vector2(39, 357)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6rkh"]
+size = Vector2(51.875, 340.5)
+
+[node name="SampleLevel 1" type="Node"]
+
+[node name="obsticals" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="obsticals"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obsticals/Area2D"]
+position = Vector2(624, 44)
+shape = SubResource("RectangleShape2D_bno6h")
+
+[node name="Area2D2" type="Area2D" parent="obsticals"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obsticals/Area2D2"]
+position = Vector2(631, 581)
+shape = SubResource("RectangleShape2D_w6rkh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(656, 490, 843, 489, 943, 413, 1003, 168, 998, 0, 1258, -5, 1268, 673, 646, 668)
+
+[node name="l_shaped_man" parent="." instance=ExtResource("2_52241")]
+position = Vector2(-649, 11)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhmuanbs3yuv2"]
+
+[ext_resource type="PackedScene" uid="uid://bkafndqua0ag8" path="res://CharactersAssembled/leaning_over_man.tscn" id="1_8bl5g"]
+
+[node name="puzzle_leaning_over_man" type="Node"]
+
+[node name="leaning_over_man" parent="." instance=ExtResource("1_8bl5g")]
+position = Vector2(-60, 244)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-330, -168)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(114, 231)
+polygon = PackedVector2Array(-167, -115, -162, 483, 436, 493, 494, 260, 674, 301, 430, 540, 61, 592, -2, 1063, 336, 1041, 976, 1048, 1414, 897, 1441, 289, 1943, 300, 1903, 1063, 1907, 1241, -197, 1241, -197, -159, 1950, -162, 1924, -1, 1169, -1, 1160, 275, 1158, 748, 935.178, 818.502, 651, 887, 297, 844, 429, 773, 534, 753, 1101, 290, 1041, 86, 487, 52, 490, -120)

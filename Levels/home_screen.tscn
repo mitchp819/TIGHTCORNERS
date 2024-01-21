@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnsksa4nhrclv"]
+
+[ext_resource type="Texture2D" uid="uid://bnyhqjbykr3dy" path="res://Assets/TitleScreen.jpg" id="1_0b6dm"]
+[ext_resource type="Script" path="res://Levels/home_screen.gd" id="1_mase4"]
+[ext_resource type="Theme" uid="uid://dylfby0j1062u" path="res://Levels/home_screen_theme.tres" id="2_u6aw5"]
+
+[node name="home_screen" type="Node"]
+script = ExtResource("1_mase4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(958, 537)
+texture = ExtResource("1_0b6dm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = 159.0
+offset_right = -4.00006
+offset_bottom = 287.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.73479, 2.73479)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="apartment escape" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_u6aw5")
+text = "Apartment Escape"
+
+[node name="sandbox" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_u6aw5")
+text = "Sandbox Mode"
+
+[node name="gallery" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_u6aw5")
+text = "Gallery "
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_u6aw5")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/apartment escape" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/sandbox" to="." method="_on_sandbox_pressed"]
+[connection signal="pressed" from="VBoxContainer/gallery" to="." method="_on_gallery_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

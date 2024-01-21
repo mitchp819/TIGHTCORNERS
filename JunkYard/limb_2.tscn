@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://biq606jc02xye"]
+
+[ext_resource type="Script" path="res://JunkYard/limb2.gd" id="1_bk4mc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4iil"]
+size = Vector2(148, 20)
+
+[node name="limb2" type="Area2D"]
+position = Vector2(291, 108)
+collision_layer = 2
+script = ExtResource("1_bk4mc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(64, 0)
+shape = SubResource("RectangleShape2D_u4iil")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 119.0
+offset_top = -7.0
+offset_right = 170.0
+offset_bottom = 24.0
+scale = Vector2(0.49293, 0.531508)
+text = "angle
+"
+
+[node name="move" type="Button" parent="."]
+offset_left = -10.0
+offset_top = -12.0
+offset_right = 11.0
+offset_bottom = 9.0
+scale = Vector2(0.671599, 0.671599)
+text = "move"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_down" from="move" to="." method="_on_move_button_down"]
+[connection signal="button_up" from="move" to="." method="_on_move_button_up"]

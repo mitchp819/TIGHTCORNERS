@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://cm4gmqkwpnglg"]
+
+[ext_resource type="Texture2D" uid="uid://c5mngte6yopm7" path="res://Assets/backgounds/backgound7.jpg" id="1_jyg5c"]
+[ext_resource type="Script" path="res://Levels/level_complete.gd" id="1_s4g5q"]
+[ext_resource type="Script" path="res://Levels/PathFollow2D.gd" id="2_k4lxm"]
+[ext_resource type="Script" path="res://Levels/PathFollow2D2.gd" id="3_etifw"]
+
+[sub_resource type="Curve2D" id="Curve2D_bhusq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 255, 155, 0, 0, 0, 0, 1496, 790, 0, 0, 0, 0, 374, 842, 0, 0, 0, 0, 1628, 223, 0, 0, 0, 0, 336, 493, 0, 0, 0, 0, 256, 157)
+}
+point_count = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_e3uud"]
+font_size = 150
+outline_size = 7
+outline_color = Color(1, 0, 1, 1)
+
+[node name="level complete" type="Node"]
+script = ExtResource("1_s4g5q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_jyg5c")
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_bhusq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(676.787, 370.835)
+rotation = 0.472951
+progress = 473.826
+h_offset = -0.025
+rotates = false
+script = ExtResource("2_k4lxm")
+
+[node name="Node2D" type="Node2D" parent="Path2D2/PathFollow2D"]
+rotation = -2.96457
+
+[node name="Label" type="Label" parent="Path2D2/PathFollow2D/Node2D"]
+offset_left = 374.398
+offset_top = -361.437
+offset_right = 1484.4
+offset_bottom = -153.437
+rotation = 2.14725
+text = "Level Complete"
+label_settings = SubResource("LabelSettings_e3uud")
+metadata/_edit_use_anchors_ = true
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_bhusq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(676.787, 370.835)
+rotation = 2.93558
+progress = 473.826
+h_offset = -0.025
+rotates = false
+script = ExtResource("3_etifw")
+
+[node name="Node2D" type="Node2D" parent="Path2D/PathFollow2D"]
+rotation = -2.96457
+
+[node name="Label2" type="Label" parent="Path2D/PathFollow2D/Node2D"]
+offset_left = -558.488
+offset_top = -79.983
+offset_right = 551.512
+offset_bottom = 128.017
+rotation = -0.0414879
+scale = Vector2(1.17723, 1.17723)
+text = "Level Complete"
+label_settings = SubResource("LabelSettings_e3uud")
+metadata/_edit_use_anchors_ = true

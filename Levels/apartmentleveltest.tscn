@@ -1,0 +1,161 @@
+[gd_scene load_steps=12 format=3 uid="uid://c7hchy04o8fob"]
+
+[ext_resource type="Texture2D" uid="uid://pwotrk5uhahb" path="res://Assets/apartmentLevel.png" id="1_3hra1"]
+[ext_resource type="Script" path="res://Levels/apartmentleveltest.gd" id="1_vjoyq"]
+[ext_resource type="Texture2D" uid="uid://dspg6652u8i0b" path="res://Assets/characters/testermanimg.png" id="4_sx5b1"]
+[ext_resource type="Texture2D" uid="uid://dmjvo2ccj7ccb" path="res://Assets/apartments.png" id="4_v8c4p"]
+[ext_resource type="Texture2D" uid="uid://c6ysctgcvcqsb" path="res://Assets/characters/recliningimg.png" id="5_spuo8"]
+[ext_resource type="Texture2D" uid="uid://c3fedlgea5nkj" path="res://Assets/characters/lshapedmanimg.png" id="6_datod"]
+[ext_resource type="Texture2D" uid="uid://doo7cxndfxh6t" path="res://Assets/characters/leaning overimg.png" id="7_tuxcn"]
+[ext_resource type="AudioStream" uid="uid://cmooefdbfyxng" path="res://Assets/Beat #4.wav" id="8_1ttf4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5dfqg"]
+font_size = 52
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+outline_color = Color(1, 0.823529, 0.894118, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m1lpj"]
+font_size = 72
+font_color = Color(0, 0, 0, 1)
+outline_size = 9
+outline_color = Color(1, 0.584314, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ino60"]
+size = Vector2(510, 678)
+
+[node name="Node" type="Node"]
+script = ExtResource("1_vjoyq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -3938.0
+offset_top = -3591.0
+offset_right = 8866.0
+offset_bottom = 5793.0
+color = Color(0.803922, 0.803922, 0.784314, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2124, 1455)
+scale = Vector2(0.66563, 0.66563)
+texture = ExtResource("1_3hra1")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(5, -106, 1929, -114, 1950, 183, 1993, 183, 1984, -215, 2349, -211, 2353, 185, 2408, 185, 2406, -116, 3505, -124, 3528, 257, 3554, 257, 3548, 524, 3996, 522, 4003, 552, 4150, 622, 3978, 619, 3966, 868, 3942, 869, 3942, 936, 3859, 941, 3860, 1018, 4223, 1021, 4177, 1848, 3808, 1849, 3807, 1917, 3720, 1917, 3720, 1961, 3633, 1960, 3634, 1993, 2955, 1994, 2992, 1975, 3029, 1939, 3056, 1894, 3146, 1918, 3148, 1942, 3161, 1939, 3138, 1838, 3111, 1757, 3140, 1708, 3163, 1637, 3163, 1572, 3131, 1523, 3085, 1496, 3072, 1494, 3112, 1418, 3121, 1421, 3135, 1410, 3138, 1400, 3139, 1384, 3146, 1378, 3153, 1373, 3163, 1374, 3175, 1368, 3181, 1358, 3178, 1347, 3171, 1342, 3171, 1335, 3179, 1330, 3180, 1319, 3177, 1310, 3169, 1308, 3144, 1313, 3056, 1487, 3022, 1489, 2981, 1504, 2947, 1532, 2934, 1549, 2918, 1548, 2902, 1567, 2902, 1588, 2894, 1589, 2887, 1570, 2824, 1608, 2778, 1648, 2756, 1695, 2771, 1711, 2755, 1739, 2750, 1843, 2771, 1907, 2736, 1921, 2738, 1930, 2792, 1933, 2816, 1961, 2860, 1995, 2610, 1999, 2367, 1996, 2372, 1729, 2319, 1729, 2289, 2246, 2351, 2270, 2362, 2047, 4182, 2032, 4132, 3042, 3497, 3065, 3124.27, 3053.52, 3134, 2790, 3154, 2788, 3157, 2754, 3138, 2748, 3154, 2691, 3136, 2635, 3115, 2611, 3083, 2603, 3060, 2611, 3037, 2671, 3020, 2651, 3031, 2629, 3022, 2611, 2995, 2599, 2967, 2608, 2963, 2625, 2834, 2620, 2826, 2708, 2887, 2717, 2860, 2745, 2777, 2751, 2775, 2787, 2792, 2790, 2780, 3049, 2328, 3029, 2319, 2736, 2262, 2738, 2260, 3128, 1877, 3130, 1914, 2725, 1860, 2723, 1822, 3015, 1580, 3011, 1325.84, 3014.45, 1333, 2987, 1477, 2948, 1477, 2845, 1475, 2773, 1494, 2722, 1455, 2701, 1408, 2697, 1385, 2732, 1362, 2745, 1269, 2754, 1280, 2714, 1312, 2662, 1347, 2648, 1375, 2665, 1410, 2657, 1427, 2630, 1418, 2606, 1394, 2602, 1352, 2636, 1270, 2668, 1278, 2589, 1313, 2560, 1344, 2556, 1327, 2541, 1324, 2519, 1305, 2523, 1291, 2517, 1279, 2524, 1274, 2564, 1258, 2577, 1270, 2590, 1258, 2673, 1205, 2645, 1212, 2608, 1215, 2573, 1162, 2557, 1121, 2595, 1072, 2676, 1046, 2677, 1018, 2691, 1012, 2708, 995, 2715, 1000, 2682, 988, 2673, 972, 2680, 944, 2681, 914, 2692, 908, 2709, 901, 2750, 827, 2781, 829, 2809, 836, 2811, 824, 2948, 1065, 3016, 696, 3023, 713, 2853, 521, 2856, 522, 2891, 470, 2893, 473, 2928, 411, 2925, 411, 2963, 360, 2960, 360, 2974, 60, 2967, 70, 2599, 422, 2600, 425, 2507, 350, 2501, 350, 2445, 288, 2444, 282, 2386, 214, 2385, 206, 2338, 82, 2338, 67, 1966, 81, 1807, 70, 1495, 486, 1482, 478, 1409, 416, 1409, 420, 1341, 393, 1344, 392, 1084, 763, 1085, 774, 1343, 828, 1349, 825, 995, 1158, 992, 1177, 1108, 1173, 1124, 1128, 1131, 1128, 1228, 1147, 1228, 1135, 1141, 1251, 1122, 1249, 1160, 1239, 1181, 1263, 1182, 1270, 1135, 1303, 1158, 1306, 1197, 1287, 1206, 1306, 1217, 1317, 1160, 1371, 1195, 1370, 1220, 1365, 1236, 1382, 1243, 1385, 1224, 1374, 1174, 1357, 1149, 1519, 1100, 1514, 1166, 1504, 1184, 1522, 1192, 1538, 1179, 1527, 1165, 1525, 1073, 1462, 1101, 1478, 992, 1701, 1002, 1923, 996, 1938, 1240, 1993, 1239, 1998, 631, 1957, 628, 1947, 930, 1706, 950, 1205, 950, 1202, 931, 1170, 899, 1172, 875, 1312, 820, 1373, 863, 1392, 851, 1352, 826, 1344, 787, 1381, 752, 1357, 712, 1272, 730, 1262, 687, 1275, 663, 1270, 628, 1235, 588, 1244, 510, 1224, 484, 1139, 471, 1147, 424, 1129, 409, 1109, 420, 1112, 471, 1006, 491, 1005, 393, 1046, 393, 1082, 346, 1077, 315, 1017, 305, 979, 291, 929, 302, 904, 355, 897, 423, 905, 491, 892, 535, 863, 467, 842, 463, 826, 484, 842, 508, 863, 564, 823, 554, 803, 518, 786, 525, 767, 521, 697, 546, 620, 593, 606, 624, 723, 848, 745, 849, 737, 867, 728, 906, 740, 948, 62, 952, 3, -216, -192, -220, -139, 3187, 4427, 3177, 4513, -448, 3, -381)
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
+polygon = PackedVector2Array(2950, 470, 2999, 462, 3040, 448, 2973, 338, 2948, 332, 2929, 333, 2862, 439, 2863, 454, 2893, 465, 2934, 470, 2931, 478, 2920, 484, 2918, 506, 2896, 511, 2880, 497, 2864, 506, 2849, 530, 2852, 548, 2889, 572, 2887, 580, 2730, 588, 2733, 604, 2748, 605, 2748, 635, 2580, 637, 2562, 646, 2554, 668, 2554, 699, 2554, 952, 2418, 950, 2408, 655, 2356, 648, 2350.21, 872.725, 2280, 874, 2212, 862, 2187.47, 857.065, 2038, 827, 1998, 811, 2051, 837, 2037, 887, 2010, 931, 2034, 927, 2066, 894, 2073, 846, 2186, 863, 2177, 935, 2175, 1207, 2163, 1237, 2172, 1328, 2185, 1331, 2193, 1424, 2253, 1455, 2244, 1424, 2232, 1403, 2251, 1388, 2251, 1294, 2236, 1102, 2211, 883, 2349, 888, 2341, 1230, 2401, 1233, 2412, 1004, 2753, 1001, 2752, 1200, 2699, 1272, 2719, 1287, 2739, 1288, 2750, 1304, 2762, 1308, 2766, 1286, 2802, 1273, 2761, 1197, 2762, 1002, 3327, 987, 3480, 993, 3467, 1450, 3495, 1450, 3496, 1543, 3895, 1547, 3895, 1486, 3824, 1488, 3819, 1432, 3755, 1427, 3751, 1379, 3531, 1378, 3549, 932, 3193, 940, 3189, 916, 3249, 912, 3249, 901, 3239, 893, 3232, 765, 3254, 764, 3254, 730, 3231, 719, 3142, 717, 3119, 728, 3120, 756, 3166, 763, 3216, 765, 3222, 886, 3188, 869, 3093, 873, 3072, 874, 3077, 826, 3074, 798, 3088, 782, 3089, 761, 3075, 750, 3053, 731, 3062, 697, 3055, 663, 3034, 635, 3004, 626, 3004, 600, 3014, 599, 3014, 585, 2967, 586, 2967, 575, 2994, 566, 3010, 553, 3013, 539, 3005, 521, 2987, 509, 2975, 507, 2966, 488, 2949, 479)
+
+[node name="Area2D3" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D3"]
+polygon = PackedVector2Array(3059, -50, 3272, -49, 3280, 53, 3070, 69, 3065, 29, 3058, -7)
+
+[node name="Area2D4" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D4"]
+polygon = PackedVector2Array(1939, 2275, 1884, 2277, 1894, 2044, 1181, 2054, 1174, 2206, 1156, 2209, 1156, 2224, 1169, 2235, 1157, 2250, 1157, 2288, 1140, 2294, 1140, 2252, 1097, 2249, 1107, 2282, 1100, 2300, 1087, 2309, 1093, 2321, 1084, 2332, 1074, 2318, 1025, 2341, 1010, 2327, 992, 2282, 949, 2236, 954, 2245, 960, 2293, 969, 2294, 964, 2328, 925, 2327, 926, 2306, 939, 2292, 935, 2246, 885, 2258, 905, 2275, 901, 2316, 887, 2349, 871, 2355, 845, 2354, 838, 2333, 840, 2307, 861, 2268, 880, 2250, 909, 2167, 918, 2054, 784, 2066, 753, 2438, 708, 2439, 732, 2062, 390, 2063, 385, 1915, 444, 1916, 445, 1876, 520, 1870, 522, 1827, 586, 1824, 587, 1785, 660, 1780, 656, 1734, 781, 1728, 785, 2001, 1364, 1996, 1362, 1962, 1355, 1927, 1320, 1809, 1241, 1820, 1217, 1960, 1206, 1957, 1160, 1963, 1124, 1816, 1111, 1819, 1092, 1904, 1073, 1911, 1082, 1845, 1012, 1851, 1026, 1940, 1007, 1946, 997, 1878, 992, 1912, 983, 1911, 980, 1853, 971, 1844, 971, 1825, 946, 1822, 943, 1799, 958, 1781, 899, 1669, 903, 1652, 1015, 1597, 1019, 1578, 994, 1571, 974, 1573, 964, 1568, 956, 1559, 963, 1536, 995, 1522, 1008, 1535, 1007, 1554, 996, 1566, 1021, 1574, 1033, 1573, 1040, 1565, 1056, 1580, 1082, 1629, 1090, 1658, 1089, 1703, 1094, 1707, 1119, 1695, 1200, 1695, 1193, 1683, 1198, 1655, 1206, 1639, 1205, 1584, 1247, 1581, 1249, 1563, 1261, 1551, 1281, 1549, 1292, 1562, 1293, 1581, 1321, 1580, 1323, 1596, 1315, 1632, 1322, 1647, 1325, 1694, 1346, 1692, 1359, 1672, 1376, 1669, 1382, 1681, 1383, 1695, 1453, 1693, 1442, 1647, 1449, 1606, 1538, 1611, 1542, 1641, 1532, 1678, 1525, 1695, 1628, 1702, 1634, 1712, 1600, 1739, 1593, 1777, 1559, 1877, 1565, 1882, 1549, 1878, 1586, 1748, 1493, 1806, 1475, 1945, 1460, 1944, 1455, 1912, 1412, 1962, 1393, 1993, 1899, 1991, 1906, 1727, 1971, 1726, 2000, 1810, 2052, 2006, 2140, 2165, 2228, 2241, 2309, 2282, 2398, 2293, 2412, 2309, 2348, 2311, 2237, 2273, 2157, 2221, 2063, 2093, 1999, 1904, 1967.5, 1786.05)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(2123, 1453)
+scale = Vector2(0.667551, 0.667551)
+texture = ExtResource("4_v8c4p")
+
+[node name="spawn" type="Node2D" parent="."]
+position = Vector2(380, 312)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(4010, 2915)
+stream = ExtResource("8_1ttf4")
+autoplay = true
+max_distance = 10000.0
+attenuation = 0.0625
+
+[node name="charachter menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="charachter menu"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 243.0
+offset_right = 1657.0
+offset_bottom = 705.0
+color = Color(1, 0.768627, 1, 0.592157)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="charachter menu"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 272.0
+offset_right = 1622.0
+offset_bottom = 668.0
+
+[node name="testermanbutton" type="Button" parent="charachter menu/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("4_sx5b1")
+
+[node name="Recliningmanbutton" type="Button" parent="charachter menu/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("5_spuo8")
+
+[node name="l-shapedmanbutton" type="Button" parent="charachter menu/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("6_datod")
+
+[node name="leaningovermanbutton" type="Button" parent="charachter menu/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("7_tuxcn")
+
+[node name="Label" type="Label" parent="charachter menu"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 149.0
+offset_right = 1389.0
+offset_bottom = 224.0
+text = "Left Click: Rotate          Right Click: Move"
+label_settings = SubResource("LabelSettings_5dfqg")
+
+[node name="Label2" type="Label" parent="charachter menu"]
+layout_mode = 0
+offset_left = 751.0
+offset_top = 66.0
+offset_right = 1045.0
+offset_bottom = 168.0
+text = "Controls"
+label_settings = SubResource("LabelSettings_m1lpj")
+
+[node name="exit" type="Area2D" parent="."]
+position = Vector2(3655, 2456)
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
+position = Vector2(-78, 269)
+shape = SubResource("RectangleShape2D_ino60")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
+z_index = 6
+position = Vector2(3586, 2742)
+scale = Vector2(-211.25, 269.006)
+amount = 43
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector2(0, -100)
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+color = Color(0.894118, 0, 0.92549, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[connection signal="pressed" from="charachter menu/HBoxContainer/testermanbutton" to="." method="_on_testermanbutton_pressed"]
+[connection signal="pressed" from="charachter menu/HBoxContainer/Recliningmanbutton" to="." method="_on_recliningmanbutton_pressed"]
+[connection signal="pressed" from="charachter menu/HBoxContainer/l-shapedmanbutton" to="." method="_on_lshapedmanbutton_pressed"]
+[connection signal="pressed" from="charachter menu/HBoxContainer/leaningovermanbutton" to="." method="_on_leaningovermanbutton_pressed"]
+[connection signal="area_entered" from="exit" to="." method="_on_exit_area_entered"]

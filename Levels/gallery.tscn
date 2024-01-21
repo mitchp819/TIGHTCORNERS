@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkrn0a2nbn3ba"]
+
+[ext_resource type="Texture2D" uid="uid://pwotrk5uhahb" path="res://Assets/apartmentLevel.png" id="1_1glxx"]
+[ext_resource type="Texture2D" uid="uid://d4gmllcy5ndl1" path="res://Assets/backgounds/backgound9.jpg" id="1_ljypv"]
+[ext_resource type="Script" path="res://Levels/gallery.gd" id="1_ptb6m"]
+[ext_resource type="Texture2D" uid="uid://cupl7s3e0ewp0" path="res://Assets/backgounds/4xreclining.png" id="3_5rljc"]
+[ext_resource type="Texture2D" uid="uid://dbkmwtaxp5t25" path="res://Assets/backgounds/5xLshapedMan.png" id="4_8jsi0"]
+[ext_resource type="Texture2D" uid="uid://canl64lxumoqe" path="res://Assets/backgounds/Screenshot 2023-11-27 220816.png" id="5_fkmg2"]
+[ext_resource type="Texture2D" uid="uid://b11tcjgpxrsk" path="res://Assets/backgounds/5xboxman.png" id="5_j5qnj"]
+[ext_resource type="Texture2D" uid="uid://c5ql2n55n30dn" path="res://Assets/backgounds/5xleaningover.png" id="6_1fnyr"]
+
+[node name="Gallery" type="Node"]
+script = ExtResource("1_ptb6m")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 99.0
+offset_top = 31.0
+offset_right = 139.0
+offset_bottom = 71.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 23.0
+offset_right = 1503.0
+offset_bottom = 976.0
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1200, 1000)
+layout_mode = 2
+texture = ExtResource("1_1glxx")
+expand_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_5rljc")
+expand_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_8jsi0")
+expand_mode = 5
+
+[node name="TextureRect6" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_j5qnj")
+expand_mode = 5
+
+[node name="TextureRect7" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_1fnyr")
+expand_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_ljypv")
+expand_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_fkmg2")
+expand_mode = 5
+
+[node name="Button" type="Button" parent="."]
+offset_left = 33.0
+offset_top = 32.0
+offset_right = 88.0
+offset_bottom = 63.0
+scale = Vector2(2.36696, 2.36696)
+text = "Home
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

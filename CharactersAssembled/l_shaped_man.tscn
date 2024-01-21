@@ -1,0 +1,249 @@
+[gd_scene load_steps=17 format=3 uid="uid://cnn0seja4wa3i"]
+
+[ext_resource type="PackedScene" uid="uid://iojfwl34pyi5" path="res://CharacterComponents/body_2.tscn" id="1_7vht5"]
+[ext_resource type="Texture2D" uid="uid://bxsgyq77pimv5" path="res://Assets/Players/LShapePerson/body.PNG" id="2_g47x4"]
+[ext_resource type="PackedScene" uid="uid://b8sqoqrw4cou6" path="res://CharacterComponents/limb.tscn" id="2_wstn0"]
+[ext_resource type="Texture2D" uid="uid://dw7d2bt1cp8su" path="res://Assets/Players/LShapePerson/neck.PNG" id="3_1ueyv"]
+[ext_resource type="BitMap" uid="uid://dhcyx0n7l7b01" path="res://Assets/Players/LShapePerson - bitmap/body.PNG" id="3_s7kxf"]
+[ext_resource type="Texture2D" uid="uid://4j0c38ff3l4o" path="res://Assets/Players/LShapePerson/leg.PNG" id="3_tqke3"]
+[ext_resource type="BitMap" uid="uid://c7r60buisdgsk" path="res://Assets/Players/LShapePerson - bitmap/neck.PNG" id="4_8w36f"]
+[ext_resource type="BitMap" uid="uid://cq72bsttkc8rt" path="res://Assets/Players/LShapePerson - bitmap/leg.PNG" id="4_ywtii"]
+[ext_resource type="Texture2D" uid="uid://b48amc5ca6k0q" path="res://Assets/Players/LShapePerson/foot.PNG" id="5_cmnfl"]
+[ext_resource type="BitMap" uid="uid://etydix4gxufx" path="res://Assets/Players/LShapePerson - bitmap/foot.PNG" id="6_nu817"]
+[ext_resource type="Texture2D" uid="uid://kpknti5po3y" path="res://Assets/Players/LShapePerson/arm big.PNG" id="9_whf4a"]
+[ext_resource type="BitMap" uid="uid://di5b2mp7dv8yn" path="res://Assets/Players/LShapePerson - bitmap/arm big.PNG" id="10_rtbc5"]
+[ext_resource type="Texture2D" uid="uid://syh4tvwy7b8u" path="res://Assets/Players/LShapePerson/arm small.PNG" id="11_301lr"]
+[ext_resource type="BitMap" uid="uid://bwbvnjoytih72" path="res://Assets/Players/LShapePerson - bitmap/arm small.PNG" id="12_dvsdj"]
+[ext_resource type="Texture2D" uid="uid://o2f30y7oq0c" path="res://Assets/Players/LShapePerson/head.PNG" id="13_x1fqq"]
+[ext_resource type="BitMap" uid="uid://bd7w6r1rj56ex" path="res://Assets/Players/LShapePerson - bitmap/head.PNG" id="14_ke27g"]
+
+[node name="l_shaped_man" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [153.0]
+
+[node name="body2" parent="." instance=ExtResource("1_7vht5")]
+position = Vector2(-1, -8)
+
+[node name="CollisionPolygon2D" parent="body2" index="0"]
+position = Vector2(293.497, 35.4323)
+rotation = 1.5388
+polygon = PackedVector2Array(-242.509, 168.329, -144.815, 179.459, -150, 258, -16.313, 259.611, -16.0094, 312.648, -243, 323, -251, 306)
+
+[node name="TextureButton" parent="body2" index="1"]
+offset_left = 417.197
+offset_top = -251.568
+offset_right = 1893.2
+offset_bottom = 1244.43
+rotation = 1.54077
+texture_normal = ExtResource("2_g47x4")
+texture_click_mask = ExtResource("3_s7kxf")
+
+[node name="limb4" parent="body2" instance=ExtResource("2_wstn0")]
+z_index = -1
+position = Vector2(-10, -185)
+
+[node name="CollisionPolygon2D" parent="body2/limb4" index="0"]
+polygon = PackedVector2Array(-11, -1, 13, 0, 9, -35, -7, -39)
+
+[node name="TextureButton" parent="body2/limb4" index="1"]
+offset_left = 128.0
+offset_top = -77.0
+offset_right = 1056.0
+offset_bottom = 1419.0
+rotation = 1.60432
+scale = Vector2(0.25388, 0.25388)
+texture_normal = ExtResource("3_1ueyv")
+texture_click_mask = ExtResource("4_8w36f")
+
+[node name="limb" parent="body2/limb4" instance=ExtResource("2_wstn0")]
+z_index = 1
+position = Vector2(3, -34)
+
+[node name="CollisionPolygon2D" parent="body2/limb4/limb" index="0"]
+polygon = PackedVector2Array(6, -39, -2, -38, -12, -26, -13, -15, -7, -4, 4, 1, 16, -5, 22, -17, 20, -27, 16, -36)
+
+[node name="TextureButton" parent="body2/limb4/limb" index="1"]
+offset_left = 116.0
+offset_top = -239.0
+offset_right = 1044.0
+offset_bottom = 1257.0
+rotation = 0.740838
+scale = Vector2(0.334602, 0.334602)
+texture_normal = ExtResource("13_x1fqq")
+texture_click_mask = ExtResource("14_ke27g")
+
+[node name="limb3" parent="body2" instance=ExtResource("2_wstn0")]
+z_index = -1
+z_as_relative = false
+position = Vector2(67, -120)
+scale = Vector2(0.78544, 0.78544)
+
+[node name="CollisionPolygon2D" parent="body2/limb3" index="0"]
+polygon = PackedVector2Array(-8, -13, 16, -12, 11, 99, -13, 97)
+
+[node name="TextureButton" parent="body2/limb3" index="1"]
+offset_left = -171.0
+offset_top = -149.0
+offset_right = 757.0
+offset_bottom = 1347.0
+scale = Vector2(0.231222, 0.231222)
+texture_normal = ExtResource("9_whf4a")
+texture_click_mask = ExtResource("10_rtbc5")
+metadata/_edit_use_anchors_ = true
+
+[node name="limb" parent="body2/limb3" instance=ExtResource("2_wstn0")]
+position = Vector2(-2, 106)
+
+[node name="CollisionPolygon2D" parent="body2/limb3/limb" index="0"]
+polygon = PackedVector2Array(-6, -9, 9, -8, 7, 72, -9, 72)
+
+[node name="TextureButton" parent="body2/limb3/limb" index="1"]
+offset_left = -122.0
+offset_top = -144.0
+offset_right = 806.0
+offset_bottom = 1352.0
+scale = Vector2(0.216765, 0.216765)
+texture_normal = ExtResource("11_301lr")
+texture_click_mask = ExtResource("12_dvsdj")
+metadata/_edit_use_anchors_ = true
+
+[node name="limb" parent="body2/limb3/limb" instance=ExtResource("2_wstn0")]
+position = Vector2(2, 78)
+
+[node name="CollisionPolygon2D" parent="body2/limb3/limb/limb" index="0"]
+polygon = PackedVector2Array(2, 17, 11, 15, 14, 8, 12, -2, 1, -6, -7, 1, -7, 10)
+
+[node name="TextureButton" parent="body2/limb3/limb/limb" index="1"]
+offset_left = -37.0
+offset_top = -139.0
+offset_right = 891.0
+offset_bottom = 1357.0
+scale = Vector2(0.203646, 0.203646)
+texture_normal = ExtResource("13_x1fqq")
+texture_click_mask = ExtResource("14_ke27g")
+metadata/_edit_use_anchors_ = true
+
+[node name="limb" parent="body2" instance=ExtResource("2_wstn0")]
+position = Vector2(3, 56)
+
+[node name="CollisionPolygon2D" parent="body2/limb" index="0"]
+polygon = PackedVector2Array(8, 172, 29, -4, 1, -22, -25, -4)
+
+[node name="TextureButton" parent="body2/limb" index="1"]
+offset_left = 87.0
+offset_top = -89.0
+offset_right = 1015.0
+offset_bottom = 1407.0
+rotation = 1.49375
+scale = Vector2(0.422719, 0.422719)
+texture_normal = ExtResource("3_tqke3")
+texture_click_mask = ExtResource("4_ywtii")
+
+[node name="limb" parent="body2/limb" instance=ExtResource("2_wstn0")]
+position = Vector2(9, 187)
+
+[node name="CollisionPolygon2D" parent="body2/limb/limb" index="0"]
+polygon = PackedVector2Array(-1, -12, -20, -9, -29, -1, -17, 6, 4, 8, 17, 6, 27, -3, 17, -9)
+
+[node name="TextureButton" parent="body2/limb/limb" index="1"]
+offset_left = 102.0
+offset_top = -198.0
+offset_right = 1030.0
+offset_bottom = 1298.0
+rotation = 1.50831
+scale = Vector2(0.272771, 0.272771)
+texture_normal = ExtResource("5_cmnfl")
+texture_click_mask = ExtResource("6_nu817")
+
+[node name="limb2" parent="body2" instance=ExtResource("2_wstn0")]
+z_index = 1
+position = Vector2(95, -114)
+
+[node name="CollisionPolygon2D" parent="body2/limb2" index="0"]
+polygon = PackedVector2Array(-8, -13, 16, -12, 11, 99, -13, 97)
+
+[node name="TextureButton" parent="body2/limb2" index="1"]
+offset_left = -171.0
+offset_top = -149.0
+offset_right = 757.0
+offset_bottom = 1347.0
+scale = Vector2(0.231222, 0.231222)
+texture_normal = ExtResource("9_whf4a")
+texture_click_mask = ExtResource("10_rtbc5")
+metadata/_edit_use_anchors_ = true
+
+[node name="limb" parent="body2/limb2" instance=ExtResource("2_wstn0")]
+position = Vector2(-2, 106)
+
+[node name="CollisionPolygon2D" parent="body2/limb2/limb" index="0"]
+polygon = PackedVector2Array(-6, -9, 9, -8, 7, 72, -9, 72)
+
+[node name="TextureButton" parent="body2/limb2/limb" index="1"]
+offset_left = -122.0
+offset_top = -144.0
+offset_right = 806.0
+offset_bottom = 1352.0
+scale = Vector2(0.216765, 0.216765)
+texture_normal = ExtResource("11_301lr")
+texture_click_mask = ExtResource("12_dvsdj")
+metadata/_edit_use_anchors_ = true
+
+[node name="limb" parent="body2/limb2/limb" instance=ExtResource("2_wstn0")]
+position = Vector2(2, 78)
+
+[node name="CollisionPolygon2D" parent="body2/limb2/limb/limb" index="0"]
+polygon = PackedVector2Array(2, 17, 11, 15, 14, 8, 12, -2, 1, -6, -7, 1, -7, 10)
+
+[node name="TextureButton" parent="body2/limb2/limb/limb" index="1"]
+offset_left = -37.0
+offset_top = -139.0
+offset_right = 891.0
+offset_bottom = 1357.0
+scale = Vector2(0.203646, 0.203646)
+texture_normal = ExtResource("13_x1fqq")
+texture_click_mask = ExtResource("14_ke27g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="body2"]
+position = Vector2(-8.43546, 4.60115)
+scale = Vector2(0.766859, 0.766859)
+enabled = false
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_right_margin = 0.5
+drag_bottom_margin = 0.5
+
+[connection signal="collision_avoided" from="body2/limb4" to="body2" method="_on_limb_collision_avoided"]
+[connection signal="collision_occur" from="body2/limb4" to="body2" method="_on_limb_collision_occur"]
+[connection signal="collision_avoided" from="body2/limb4/limb" to="body2" method="_on_limb_collision_avoided"]
+[connection signal="collision_occur" from="body2/limb4/limb" to="body2" method="_on_limb_collision_occur"]
+[connection signal="collision_avoided" from="body2/limb3" to="body2" method="_on_limb_collision_avoided"]
+[connection signal="collision_occur" from="body2/limb3" to="body2" method="_on_limb_collision_occur"]
+[connection signal="collision_avoided" from="body2/limb3/limb" to="body2" method="_on_limb_collision_avoided"]
+[connection signal="collision_occur" from="body2/limb3/limb" to="body2" method="_on_limb_collision_occur"]
+[connection signal="collision_avoided" from="body2/limb3/limb/limb" to="body2" method="_on_limb_collision_avoided"]
+[connection signal="collision_occur" from="body2/limb3/limb/limb" to="body2" method="_on_limb_collision_occur"]
+[connection signal="collision_avoided" from="body2/limb" to="body2" method="_on_limb_collision_avoided"]
+[connection signal="collision_occur" from="body2/limb" to="body2" method="_on_limb_collision_occur"]
+[connection signal="collision_avoided" from="body2/limb/limb" to="body2" method="_on_limb_collision_avoided"]
+[connection signal="collision_occur" from="body2/limb/limb" to="body2" method="_on_limb_collision_occur"]
+[connection signal="collision_avoided" from="body2/limb2" to="body2" method="_on_limb_collision_avoided"]
+[connection signal="collision_occur" from="body2/limb2" to="body2" method="_on_limb_collision_occur"]
+[connection signal="collision_avoided" from="body2/limb2/limb" to="body2" method="_on_limb_collision_avoided"]
+[connection signal="collision_occur" from="body2/limb2/limb" to="body2" method="_on_limb_collision_occur"]
+[connection signal="collision_avoided" from="body2/limb2/limb/limb" to="body2" method="_on_limb_collision_avoided"]
+[connection signal="collision_occur" from="body2/limb2/limb/limb" to="body2" method="_on_limb_collision_occur"]
+
+[editable path="body2"]
+[editable path="body2/limb4"]
+[editable path="body2/limb4/limb"]
+[editable path="body2/limb3"]
+[editable path="body2/limb3/limb"]
+[editable path="body2/limb3/limb/limb"]
+[editable path="body2/limb"]
+[editable path="body2/limb/limb"]
+[editable path="body2/limb2"]
+[editable path="body2/limb2/limb"]
+[editable path="body2/limb2/limb/limb"]

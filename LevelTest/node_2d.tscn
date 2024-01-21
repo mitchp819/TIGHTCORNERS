@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://bn4grtx4ifs6x"]
+
+[ext_resource type="PackedScene" uid="uid://biq606jc02xye" path="res://JunkYard/limb_2.tscn" id="1_jgqtc"]
+[ext_resource type="PackedScene" uid="uid://ch2v0xoup0w8x" path="res://JunkYard/body.tscn" id="2_drwjl"]
+[ext_resource type="Texture2D" uid="uid://bf2sethnirh40" path="res://Assets/Players/teseterMan/MainBody.PNG" id="3_vowlv"]
+[ext_resource type="BitMap" uid="uid://418bcnrgc6ha" path="res://Assets/Players/teseterMan - bitmap/MainBody.PNG" id="4_rtv58"]
+[ext_resource type="PackedScene" uid="uid://b8sqoqrw4cou6" path="res://CharacterComponents/limb.tscn" id="5_jb3l5"]
+[ext_resource type="Texture2D" uid="uid://bdrkemqf08pd5" path="res://Assets/Players/teseterMan/Leg.PNG" id="6_sikee"]
+[ext_resource type="BitMap" uid="uid://c0wevwbro8tja" path="res://Assets/Players/teseterMan - bitmap/Leg.PNG" id="7_ccm65"]
+[ext_resource type="PackedScene" uid="uid://dawu7k80o0ucb" path="res://CharacterComponents/tester_man_assembled.tscn" id="8_6ec22"]
+[ext_resource type="PackedScene" uid="uid://iojfwl34pyi5" path="res://CharacterComponents/body_2.tscn" id="9_8v7at"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nc6u3"]
+size = Vector2(26.1, 72.0454)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(839, 220)
+scale = Vector2(-2.85714, 3.66667)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.10001, -43.659)
+shape = SubResource("RectangleShape2D_nc6u3")
+
+[node name="limb2" parent="." instance=ExtResource("1_jgqtc")]
+
+[node name="limb2" parent="limb2" instance=ExtResource("1_jgqtc")]
+position = Vector2(153, 1)
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(832, 549)
+scale = Vector2(-2.85714, 3.66667)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0, 3.18182)
+shape = SubResource("RectangleShape2D_nc6u3")
+
+[node name="body" parent="." instance=ExtResource("2_drwjl")]
+visible = false
+position = Vector2(687, 305)
+
+[node name="CollisionPolygon2D" parent="body" index="0"]
+polygon = PackedVector2Array(7, 53, 11, 40, 18, 39, 22, 43, 68, 49, 70, 47, 68, 44, 76, 41, 69, -30, 58, -46, -33, -50, -45, -41, -78, -28, -73, 40, -67, 47)
+
+[node name="TextureButton" parent="body" index="1"]
+offset_left = -165.0
+offset_top = -71.0
+offset_right = 1311.0
+offset_bottom = 641.0
+scale = Vector2(0.191978, 0.191978)
+texture_normal = ExtResource("3_vowlv")
+texture_click_mask = ExtResource("4_rtv58")
+
+[node name="limb" parent="body" instance=ExtResource("5_jb3l5")]
+position = Vector2(55, 18)
+
+[node name="CollisionPolygon2D" parent="body/limb" index="0"]
+polygon = PackedVector2Array(-18, -21, 59, -21, 57, -50, 69, -55, 139, -53, 138, -15, 127, -14, 104, -13, 101, 21, -20, 24, -27, 18, -28, -4)
+
+[node name="TextureButton" parent="body/limb" index="1"]
+offset_left = -95.0
+offset_top = -110.0
+offset_right = 1381.0
+offset_bottom = 602.0
+scale = Vector2(0.284619, 0.284619)
+texture_normal = ExtResource("6_sikee")
+texture_click_mask = ExtResource("7_ccm65")
+
+[node name="tester_man_assembled" parent="." instance=ExtResource("8_6ec22")]
+position = Vector2(-192, 79)
+scale = Vector2(0.809415, 0.809415)
+
+[node name="body2" parent="." instance=ExtResource("9_8v7at")]
+collision_layer = 1
+
+[connection signal="collision_avoided" from="body/limb" to="body" method="_on_limb_collision_avoided"]
+[connection signal="collision_occur" from="body/limb" to="body" method="_on_limb_collision_occur"]
+
+[editable path="body"]
+[editable path="body/limb"]
